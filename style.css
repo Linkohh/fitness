@@ -48,3 +48,11 @@ th, td {
 th {
     background-color: #f0f0f0;
 }
+
+#infoSection {
+    margin-top: 20px;
+}
+
+#infoSection p {
+    margin: 4px 0;
+}
