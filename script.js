@@ -322,6 +322,10 @@ document.getElementById('addBtn').addEventListener('click', () => {
   const brk = document.getElementById('breakInput').value;
   const intensity = document.getElementById('intensityInput').value;
 
+  const info = exerciseInfo[exercise];
+  const description = info ? info.description : 'N/A';
+  const muscles = info ? `${info.main}${info.secondary ? ' / ' + info.secondary : ''}` : 'N/A';
+
   const row = document.createElement('tr');
   row.innerHTML = `
     <td>${exercise}</td>
@@ -330,6 +334,8 @@ document.getElementById('addBtn').addEventListener('click', () => {
     <td>${time}</td>
     <td>${brk}</td>
     <td>${intensity}</td>
+    <td>${description}</td>
+    <td>${muscles}</td>
   `;
   tableBody.appendChild(row);
 });
