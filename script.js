@@ -241,6 +241,46 @@ const exerciseInfo = {
     description: "Low-impact cardio performed on an elliptical trainer.",
     main: "Cardiovascular system",
     secondary: "Glutes, hamstrings"
+  },
+  "Axe Hold": {
+    description: "Hold a weighted axe or similar object for time to build forearm and grip strength.",
+    main: "Forearms",
+    secondary: "Shoulders"
+  },
+  "Abdominal Stabilization": {
+    description: "Maintain a braced core position to improve overall stability.",
+    main: "Abdominals",
+    secondary: "Lower back"
+  },
+  "Step-ups": {
+    description: "Step onto a raised platform one leg at a time to strengthen the legs and glutes.",
+    main: "Quadriceps, glutes",
+    secondary: "Hamstrings"
+  },
+  "commando pull-ups": {
+    description: "Alternate your grip as you pull your body up so one shoulder passes the bar at a time.",
+    main: "Back, biceps",
+    secondary: "Core"
+  },
+  "Single Arm Plank to Row": {
+    description: "Hold a plank while rowing a dumbbell with one arm.",
+    main: "Core",
+    secondary: "Back, shoulders"
+  },
+  "Fingerboard 20 mm edge": {
+    description: "Hang from a 20 mm edge to improve finger strength for climbing.",
+    main: "Forearms",
+    secondary: "Grip"
+  },
+  "Cable Rear Delt Fly": {
+    description: "Pull the cables outward to isolate the rear deltoids.",
+    main: "Rear delts",
+    secondary: "Upper back"
+  },
+  "Incline Bench Reverse Fly - Hello": {
+    description: "Lie on an incline bench and raise the dumbbells out to the side to hit the rear delts.",
+    main: "Rear delts",
+    secondary: "Upper back"
   }
 };
 
