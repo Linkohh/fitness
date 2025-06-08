@@ -284,18 +284,18 @@ const exerciseInfo = {
   }
 };
 
-const selectEl = document.getElementById('exerciseSelect');
+const selectEl = document.getElementById('exerciseInput');
+const dataListEl = document.getElementById('exerciseList');
 const tableBody = document.querySelector('#planTable tbody');
 const descEl = document.getElementById('desc');
 const mainEl = document.getElementById('mainMuscles');
 const secEl = document.getElementById('secondaryMuscles');
 
-// Populate dropdown
+// Populate datalist
 exercises.forEach(name => {
   const opt = document.createElement('option');
   opt.value = name;
-  opt.textContent = name;
-  selectEl.appendChild(opt);
+  dataListEl.appendChild(opt);
 });
 
 function updateInfo() {
@@ -311,7 +311,7 @@ function updateInfo() {
   }
 }
 
-selectEl.addEventListener('change', updateInfo);
+selectEl.addEventListener('input', updateInfo);
 updateInfo();
 
 document.getElementById('addBtn').addEventListener('click', () => {
