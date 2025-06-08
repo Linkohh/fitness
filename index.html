@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Workout Planner</h1>
+        <div class="form-group">
+            <label for="exerciseSelect">Exercise:</label>
+            <select id="exerciseSelect"></select>
+        </div>
+        <div class="form-group">
+            <label for="setsInput">Sets:</label>
+            <input type="number" id="setsInput" min="1" value="3">
+        </div>
+        <div class="form-group">
+            <label for="repsInput">Reps:</label>
+            <input type="number" id="repsInput" min="1" value="10">
+        </div>
+        <div class="form-group">
+            <label for="timeInput">Time (sec):</label>
+            <input type="number" id="timeInput" min="0" value="0">
+        </div>
+        <div class="form-group">
+            <label for="breakInput">Break (sec):</label>
+            <input type="number" id="breakInput" min="0" value="60">
+        </div>
+        <div class="form-group">
+            <label for="intensityInput">Intensity (1-10):</label>
+            <input type="number" id="intensityInput" min="1" max="10" value="5">
+        </div>
+        <button id="addBtn">Add Exercise</button>
+
+        <h2>Your Plan</h2>
+        <table id="planTable">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Time</th>
+                    <th>Break</th>
+                    <th>Intensity</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
