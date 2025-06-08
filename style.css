@@ -26,6 +26,10 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
+#clearBtn {
+    margin-left: 10px;
+}
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -69,6 +73,46 @@ th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+}
+
+.actions button {
+    margin-right: 5px;
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
 }
 
 th {
