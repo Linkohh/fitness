@@ -1,36 +1,62 @@
+:root {
+    --accent-color: #27ae60;
+    --background: linear-gradient(135deg, #141e30, #243b55);
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     padding: 20px;
-    background-color: #f8f8f8;
+    background: var(--background);
+    color: #333;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
     background: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+h1, h2 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .form-group {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 label {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    font-weight: bold;
 }
 
 input, select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 button {
-    padding: 10px 15px;
-    margin-top: 10px;
+    padding: 12px 20px;
+    margin-top: 15px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #1e8748;
 }
 
 table {
@@ -46,7 +72,8 @@ th, td {
 }
 
 th {
-    background-color: #f0f0f0;
+    background-color: var(--accent-color);
+    color: #fff;
 }
 
 #infoSection {
