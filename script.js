@@ -336,6 +336,74 @@ document.getElementById('addBtn').addEventListener('click', () => {
     <td>${intensity}</td>
     <td>${description}</td>
     <td>${muscles}</td>
+    <td class="actions">
+      <button class="edit-row">Edit</button>
+      <button class="delete-row">Delete</button>
+    </td>
   `;
   tableBody.appendChild(row);
+
+  row.querySelector('.delete-row').addEventListener('click', () => {
+    row.remove();
+  });
+
+  row.querySelector('.edit-row').addEventListener('click', () => {
+    selectEl.value = exercise;
+    document.getElementById('setsInput').value = sets;
+    document.getElementById('repsInput').value = reps;
+    document.getElementById('timeInput').value = time;
+    document.getElementById('breakInput').value = brk;
+    document.getElementById('intensityInput').value = intensity;
+    updateInfo();
+    row.remove();
+  });
 });
+
+document.getElementById('clearBtn').addEventListener('click', () => {
+  tableBody.innerHTML = '';
+});
+
+function getPlanText() {
+  let text = 'My Workout Plan:\n';
+  tableBody.querySelectorAll('tr').forEach(row => {
+    const cells = row.querySelectorAll('td');
+    if (cells.length > 0) {
+      text += `${cells[0].textContent} - ${cells[1].textContent} sets x ${cells[2].textContent} reps\n`;
+    }
+  });
+  return text;
+}
+
+const shareBtn = document.getElementById('shareBtn');
+const shareMenu = document.getElementById('shareMenu');
+shareBtn.addEventListener('click', () => {
+  shareMenu.parentElement.classList.toggle('show');
+});
+
+document.getElementById('shareTwitter').addEventListener('click', () => {
+  const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(getPlanText())}`;
+  window.open(url, '_blank');
+});
+
+document.getElementById('shareFacebook').addEventListener('click', () => {
+  const url = `https://www.facebook.com/sharer/sharer.php?u=&quote=${encodeURIComponent(getPlanText())}`;
+  window.open(url, '_blank');
+});
+
+document.getElementById('shareEmail').addEventListener('click', () => {
+  location.href = `mailto:?subject=My Workout Plan&body=${encodeURIComponent(getPlanText())}`;
+});
+
+document.getElementById('downloadPdf').addEventListener('click', () => {
+  const doc = new jspdf.jsPDF();
+  doc.text('My Workout Plan', 10, 10);
+  let y = 20;
+  tableBody.querySelectorAll('tr').forEach(row => {
+    const cells = row.querySelectorAll('td');
+    const line = `${cells[0].textContent} - ${cells[1].textContent} sets x ${cells[2].textContent} reps`;
+    doc.text(line, 10, y);
+    y += 10;
+  });
+  doc.save('workout_plan.pdf');
+});
+

@@ -35,7 +35,18 @@
             <label for="intensityInput">Intensity (1-10):</label>
             <input type="number" id="intensityInput" min="1" max="10" value="5">
         </div>
-        <button id="addBtn">Add Exercise</button>
+        <div id="controls">
+            <button id="addBtn">Add Exercise</button>
+            <div class="dropdown">
+                <button id="shareBtn">Share This ▾</button>
+                <div id="shareMenu" class="dropdown-content">
+                    <a href="#" id="shareTwitter">Twitter</a>
+                    <a href="#" id="shareFacebook">Facebook</a>
+                    <a href="#" id="shareEmail">Email</a>
+                    <a href="#" id="downloadPdf">Download PDF</a>
+                </div>
+            </div>
+        </div>
 
         <div id="infoSection">
             <h2>Exercise Info</h2>
@@ -44,7 +55,7 @@
             <p><strong>Secondary muscles:</strong> <span id="secondaryMuscles"></span></p>
         </div>
 
-        <h2>Your Plan</h2>
+        <h2>Your Plan <button id="clearBtn">Clear Plan</button></h2>
         <table id="planTable">
             <thead>
                 <tr>
@@ -56,11 +67,13 @@
                     <th>Intensity</th>
                     <th>Description</th>
                     <th>Target Muscles</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
