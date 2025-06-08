@@ -201,8 +201,54 @@ const exercises = [
     "Leg Presses (wide)",
 ]
 
+const exerciseInfo = {
+  "Handstand Push Up": {
+    description: "Press your body vertically while in a handstand position.",
+    main: "Shoulders, triceps",
+    secondary: "Upper chest, core"
+  },
+  "Kettlebell Swing": {
+    description: "Explosively swing the kettlebell between your legs using hip drive.",
+    main: "Glutes, hamstrings",
+    secondary: "Lower back, core, shoulders"
+  },
+  "Box Squat": {
+    description: "Squat to a box to control depth and build power.",
+    main: "Quadriceps, glutes",
+    secondary: "Hamstrings"
+  },
+  "Pullup on fingerboard": {
+    description: "Pull yourself up using a fingerboard to develop grip strength.",
+    main: "Lats, biceps",
+    secondary: "Forearms"
+  },
+  "Bench Press": {
+    description: "Press a barbell from your chest while lying on a bench.",
+    main: "Pectorals, triceps",
+    secondary: "Front deltoids"
+  },
+  "Lunges": {
+    description: "Step forward and lower your body until both knees bend to 90 degrees.",
+    main: "Quadriceps, glutes",
+    secondary: "Hamstrings, calves"
+  },
+  "Tricep Pushdown on Cable": {
+    description: "Extend your arms downward on a cable machine to isolate the triceps.",
+    main: "Triceps",
+    secondary: "Shoulders, core"
+  },
+  "Elliptical": {
+    description: "Low-impact cardio performed on an elliptical trainer.",
+    main: "Cardiovascular system",
+    secondary: "Glutes, hamstrings"
+  }
+};
+
 const selectEl = document.getElementById('exerciseSelect');
 const tableBody = document.querySelector('#planTable tbody');
+const descEl = document.getElementById('desc');
+const mainEl = document.getElementById('mainMuscles');
+const secEl = document.getElementById('secondaryMuscles');
 
 // Populate dropdown
 exercises.forEach(name => {
@@ -211,6 +257,22 @@ exercises.forEach(name => {
   opt.textContent = name;
   selectEl.appendChild(opt);
 });
+
+function updateInfo() {
+  const info = exerciseInfo[selectEl.value];
+  if (info) {
+    descEl.textContent = info.description;
+    mainEl.textContent = info.main;
+    secEl.textContent = info.secondary;
+  } else {
+    descEl.textContent = 'No description available.';
+    mainEl.textContent = 'N/A';
+    secEl.textContent = 'N/A';
+  }
+}
+
+selectEl.addEventListener('change', updateInfo);
+updateInfo();
 
 document.getElementById('addBtn').addEventListener('click', () => {
   const exercise = selectEl.value;
